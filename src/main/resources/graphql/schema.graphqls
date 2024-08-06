@@ -1,0 +1,21 @@
+type Query {
+    stakedTokens(publicAddress: String!): [StakedEvent]
+    allStakedTokens: [StakedEvent]
+    stakingRewards(publicAddress: String!): [ClaimedEvent]
+    usersData: UsersData
+}
+
+type StakedEvent {
+    username: String
+    amount: String
+}
+
+type ClaimedEvent {
+    username: String
+    reward: String
+}
+
+type UsersData {
+    stakedEvents: [StakedEvent]
+    claimedEvents: [ClaimedEvent]
+}
